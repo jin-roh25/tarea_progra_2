@@ -4,6 +4,12 @@
  */
 package tarea_1;
 
+class Epiteto{
+    Epiteto(){
+        
+    }
+}
+
 public class Tarea_1 {
 
     public static void main(String[] args) {
