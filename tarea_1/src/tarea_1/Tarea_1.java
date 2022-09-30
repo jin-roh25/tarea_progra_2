@@ -11,6 +11,12 @@ class Epiteto{
     }
 }
 
+class Epiteta{
+    Epiteta(){
+        
+    }
+}
+
 public class Tarea_1 {
 
     public static void main(String[] args) {
