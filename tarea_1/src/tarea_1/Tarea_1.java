@@ -42,8 +42,6 @@ class DocTriburtario{
         this.numero = a;
         this.rut = b;
         this.fecha = LocalDate.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        
     }
     
     public String getNumero(){
@@ -56,7 +54,8 @@ class DocTriburtario{
     }
     public String getFecha(){
         
-        return this.fecha.format(myFormatObj);
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return this.fecha.format(formato);
     }
     public void setNumero(String a){
         
@@ -69,7 +68,12 @@ class DocTriburtario{
     public void setFecha(){
         
         this.fecha = LocalDate.now();
-        myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    }
+    public String toString(){
+        
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String s = "Numero: "+this.numero+"\nRut: "+this.rut+"\nFecha: "+this.fecha.format(formato);
+        return s;
     }
 }
 
@@ -90,13 +94,50 @@ class Factura extends DocTriburtario{
 }
 
 class Dierccion{
-    Dierccion(){
+    
+    private String direccion;
+    
+    Dierccion(String Direccion){
+        this.direccion = Direccion;
+    }
+    public String getDireccion(){
+        return this.direccion;
+    }
+    public void setDireccion(String Direccion){
+        this.direccion = Direccion;
+    }
+    public String toString(){
         
+        String s = "Direccion: "+this.direccion;
+        return s;
     }
 }
 class Cliente{
-    Cliente(){
+    
+    private String nombre;
+    private String rut;
+    
+    Cliente(String Nombre, String Rut){
         
+        this.nombre = Nombre;
+        this.rut = Rut;
+    }
+    public String getNombre(){
+        return this.nombre;
+    }
+    public String getRut(){
+        return this.rut;
+    }
+    public void setNombre(String Nombre){
+        this.nombre = Nombre;
+    }
+    public void setRut(String Rut){
+        this.rut = Rut;
+    }
+    public String toString(){
+        
+        String s = "Nombre: "+this.nombre+"\n"+"Rut:"+this.rut;
+        return s;
     }
 }
 
@@ -121,7 +162,8 @@ class OrdenCompra{
 public class Tarea_1 {
 
     public static void main(String[] args) {
-        
+        LocalDate ahora = LocalDate.now();
+        System.out.println(ahora);
     }
     
 }
