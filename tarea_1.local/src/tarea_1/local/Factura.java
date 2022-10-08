@@ -4,10 +4,9 @@
  */
 package tarea_1.local;
 
-/**
- *
- * @author Sebastian
- */
-public class Factura {
-    
+public class Factura extends DocTributario{
+    Factura(String num, String rut){
+        
+        super(num,rut);
+    }
 }

@@ -4,10 +4,21 @@
  */
 package tarea_1.local;
 
-/**
- *
- * @author Sebastian
- */
 public class Calculos {
     
+    public Calculos(){
+        
+    }
+    public float calPrecio(){
+        return;
+    }
+    public float calPrecioSinIVA(){
+        return;
+    }
+    public float calIVA(){
+        return;
+    }
+    public float calPeso(){
+        return;
+    }
 }

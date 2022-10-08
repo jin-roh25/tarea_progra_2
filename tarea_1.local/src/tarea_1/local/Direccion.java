@@ -4,10 +4,22 @@
  */
 package tarea_1.local;
 
-/**
- *
- * @author Sebastian
- */
 public class Direccion {
     
+    private String direccion;
+    
+    Direccion(String Direccion){
+        this.direccion = Direccion;
+    }
+    public String getDireccion(){
+        return this.direccion;
+    }
+    public void setDireccion(String Direccion){
+        this.direccion = Direccion;
+    }
+    public String toString(){
+        
+        String s = "Direccion: "+this.direccion;
+        return s;
+    }
 }

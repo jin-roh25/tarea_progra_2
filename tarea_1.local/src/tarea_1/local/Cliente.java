@@ -4,10 +4,31 @@
  */
 package tarea_1.local;
 
-/**
- *
- * @author Sebastian
- */
 public class Cliente {
     
+  private String nombre;
+    private String rut;
+    
+    Cliente(String Nombre, String Rut){
+        
+        this.nombre = Nombre;
+        this.rut = Rut;
+    }
+    public String getNombre(){
+        return this.nombre;
+    }
+    public String getRut(){
+        return this.rut;
+    }
+    public void setNombre(String Nombre){
+        this.nombre = Nombre;
+    }
+    public void setRut(String Rut){
+        this.rut = Rut;
+    }
+    public String toString(){
+        
+        String contenido = "Nombre: "+this.nombre+"\n"+"Rut:"+this.rut;
+        return contenido;
+    }  
 }

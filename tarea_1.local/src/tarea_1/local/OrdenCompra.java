@@ -35,5 +35,16 @@ public class OrdenCompra {
         String contenido = "Estado: "+this.estado+"\nFecha: "+this.fecha;
         return contenido;   
     }
-    
+    public float calPrecio(){
+        return;
+    }
+    public float calPrecioSinIVA(){
+        return;
+    }
+    public float calIVA(){
+        return;
+    }
+    public float calPeso(){
+        return;
+    }
 }
