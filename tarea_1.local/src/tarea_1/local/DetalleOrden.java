@@ -23,7 +23,7 @@ public class DetalleOrden {
     }
     public String toString(){
         
-        String contenido = "Cantidad: "+this.cantidad;
+        String contenido = "Cantidad: "+this.cantidad+"\nArticulo:\n"+articulo.toString();
         return contenido;
     }
     public float calPrecio(){

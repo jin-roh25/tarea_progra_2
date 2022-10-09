@@ -8,11 +8,13 @@ public class Cliente {
     
   private String nombre;
   private String rut;
+  private Direccion direccion;
     
-    Cliente(String Nombre, String Rut){
+    Cliente(String a, String b, Direccion c){
         
-        this.nombre = Nombre;
-        this.rut = Rut;
+        this.nombre = a;
+        this.rut = b;
+        this.direccion = c;
     }
     public String getNombre(){
         return this.nombre;
@@ -20,15 +22,21 @@ public class Cliente {
     public String getRut(){
         return this.rut;
     }
+    public String getDireccion(){
+        return this.direccion.getDireccion();
+    }
     public void setNombre(String Nombre){
         this.nombre = Nombre;
     }
     public void setRut(String Rut){
         this.rut = Rut;
     }
+    public void setDireccion(String a){
+        this.direccion.setDireccion(a);
+    }
     public String toString(){
         
-        String contenido = "Nombre: "+this.nombre+"\n"+"Rut:"+this.rut;
+        String contenido = "Nombre: "+this.nombre+"\nRut:"+this.rut+"\n"+this.direccion.toString();
         return contenido;
     }  
 }

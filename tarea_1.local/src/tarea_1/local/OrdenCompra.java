@@ -36,7 +36,7 @@ public class OrdenCompra {
     public void setFecha(){
         fecha = LocalDate.now();
     }
-    public void getCarrito(OrdenCompra a){
+    public void getCarrito(DetalleOrden a){
         carrito.add(a);
     }
     public String toString(){
