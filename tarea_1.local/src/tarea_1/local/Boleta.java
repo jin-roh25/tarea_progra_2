@@ -5,8 +5,8 @@
 package tarea_1.local;
 
 public class Boleta extends DocTributario{
-    Boleta(String num, String rut){
+    Boleta(String num, String rut, Direccion direccion){
         
-        super(num,rut);
+        super(num,rut,direccion);
     }
 }

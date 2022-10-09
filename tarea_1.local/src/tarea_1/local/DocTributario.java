@@ -10,38 +10,42 @@ public class DocTributario {
     private String numero;
     private String rut;
     private LocalDate fecha;
+    private Direccion direccion;
     
-    DocTributario(String a, String b){
+    DocTributario(String a, String b, Direccion c){
         
         this.numero = a;
         this.rut = b;
         this.fecha = LocalDate.now();
+        this.direccion = c;
     }
-    
     public String getNumero(){
-        
         return this.numero;
     }
     public String getRut(){
-        
         return this.rut;
     }
-    public String getFecha(){
-        
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        return this.fecha.format(formato);
+    public LocalDate getFecha(){
+        return this.fecha;
+    }
+    public Direccion getDireccion(){
+        return this.direccion;
     }
     public void setNumero(String a){
         
         this.numero =a;
     }
-    public void setRut(String b){
+    public void setRut(String a){
         
-        this.rut = b;
+        this.rut = a;
     }
     public void setFecha(){
         
         this.fecha = LocalDate.now();
+    }
+    public void setDireccion(String a){
+        
+        this.direccion.setDireccion(a);
     }
     public String toString(){
         

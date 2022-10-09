@@ -5,8 +5,8 @@
 package tarea_1.local;
 
 public class Factura extends DocTributario{
-    Factura(String num, String rut){
+    Factura(String num, String rut, Direccion direccion){
         
-        super(num,rut);
+        super(num,rut,direccion);
     }
 }
