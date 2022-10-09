@@ -7,7 +7,7 @@ package tarea_1.local;
 public class Cliente {
     
   private String nombre;
-    private String rut;
+  private String rut;
     
     Cliente(String Nombre, String Rut){
         

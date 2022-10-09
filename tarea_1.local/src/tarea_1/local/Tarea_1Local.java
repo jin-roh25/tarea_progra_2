@@ -31,7 +31,6 @@ class Tarjeta extends Pago{
 }
 
 
-
 class DetalleOrden{
     DetalleOrden(){
         
@@ -51,8 +50,10 @@ public class Tarea_1Local {
         /*Factura doc = new Factura("945832139","21.355.546-7");
         System.out.println(doc.toString());*/
         
-        Prueba p = new Prueba();
-        System.out.println(p.getFecha());
+        /*Prueba p = new Prueba();
+        System.out.println(p.getFecha());*/
+        
+        
     }
     
 }
