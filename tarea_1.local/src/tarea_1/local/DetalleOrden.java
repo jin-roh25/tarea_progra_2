@@ -9,10 +9,10 @@ public class DetalleOrden {
     private int cantidad;
     private Articulo articulo;
     
-    public DetalleOrden(int a, Articulo b){
+    public DetalleOrden(int cantidad, Articulo articulo){
         
-        cantidad = a;
-        articulo = b;
+        this.cantidad = cantidad;
+        this.articulo = articulo;
     }
     public int getCantidad(){
         return this.cantidad;

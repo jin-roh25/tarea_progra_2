@@ -3,7 +3,7 @@ package tarea_1.local;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Pago {
+public abstract class Pago {
 	public OrdenCompra orden;
 	private float monto;
 	private LocalDate fecha;
@@ -38,8 +38,5 @@ public class Pago {
 		this.orden = orden;
 	}
 
-	public String toString(){
-      DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		return "monto: " + this.monto + "\nfecha: " + fecha.format(formato);
-	}
+	public abstract String toString();
 }

@@ -1,6 +1,7 @@
 package tarea_1.local;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Tarjeta extends Pago {
 	private String tipo;
@@ -27,4 +28,9 @@ public class Tarjeta extends Pago {
 	public void setNumTransacción(String nuCuenta){
 		this.numTransacción = numTransacción;
 	}
+        public String toString(){
+            
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            return "monto: " + getMonto() + "\nfecha: " + getFecha().format(formato)+"\ntipo: "+this.tipo+"\nnumTransaccion: "+this.numTransacción;
+        }
 }
