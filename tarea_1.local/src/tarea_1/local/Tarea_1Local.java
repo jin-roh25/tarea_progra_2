@@ -36,6 +36,8 @@ public class Tarea_1Local {
 		ord2.setCarrito(new DetalleOrden(1, art5));
 
 		ord1.pagar(1, 10000, 1, null, null);
+		ord2.pagar(2, 10000, 1, "Santander", "12345654321");
+		ord3.pagar(3, 10000, 4, "credito", "951357");
 
 		System.out.println(ord1.toString() + "\n" + ord2.toString() + "\n" + ord3.toString());
 
