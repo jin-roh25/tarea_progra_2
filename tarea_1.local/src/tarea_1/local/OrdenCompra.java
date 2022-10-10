@@ -17,15 +17,15 @@ public class OrdenCompra {
     private Factura factura;
 	 private ArrayList pagos;
     
-    public OrdenCompra(String a, Cliente b, DetalleOrden c, Boleta d, Factura e){
+    public OrdenCompra(Cliente cliente, DetalleOrden primerDetalle, Boleta boleta, Factura factura){
         
-        estado = a;
+        estado = "PorPagar";
         fecha = LocalDate.now();
-        cliente = b;
+        this.cliente = cliente;
         carrito = new ArrayList<DetalleOrden>();
-        carrito.add(c);
-        boleta = d;
-        factura = e;
+        carrito.add(primerDetalle);
+        this.boleta = boleta;
+        this.factura = factura;
     }
     public String getEstado(){
         return this.estado;
@@ -63,12 +63,6 @@ public class OrdenCompra {
     public void setFactura(Factura a){
         factura = a;
     }
-    public String toString(){
-        
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String contenido = "Estado: "+this.estado+"\nFecha: "+this.fecha.format(formato)+"\nCliente:\n"+cliente.toString();
-        return contenido;   
-    }
     public float calPrecio() {
         float sum = 0;
         for (int i=0; i < carrito.size(); i++) {
@@ -100,13 +94,34 @@ public class OrdenCompra {
         }
         return sum;
     }
+	 
+		public String toString() {
+
+			DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+			String contenido = "Estado: " + this.estado + "\nFecha: " + this.fecha.format(formato) + "\nprecio:" + this.calPrecio() + 
+									"\nCliente:" + cliente.toString() + "\n";
+			if (estado == "pagadoCnEfct"){
+				Efectivo temp = pagos.get(0);
+				contenido = contenido + temp.toString();
+			}else if (estado == "pagadoCnTrans"){
+			}else if (estado == "pagadoCnTarj"){
+				for (int i = 0;i<pagos.size();i++){
+					Pago temp = 
+					contenido = contenido + pagos[i].toString();
+				}
+			return contenido;
+		}
 
 	 public void pagar(int metodoDePago, float monto, int cuotas, String s1, String s2) {
+
 		if (metodoDePago == 1){
+			this.estado = "pagadoCnEfect";
 			pagos.add(new Efectivo(monto,LocalDate.now(),this));
 		}else if(metodoDePago == 2){
+			this.estado = "pagadoCnTrans";
 			pagos.add(new Transferencia(this.calPrecio(),LocalDate.now(),this,s1,s2));
 		}else if(metodoDePago == 3){
+			this.estado = "pagadoCnTarj";
 			float cuota = this.calPrecio()/cuotas;
 			LocalDate fecha = LocalDate.now();
 			for (int i = 0;i<cuotas;i++){
