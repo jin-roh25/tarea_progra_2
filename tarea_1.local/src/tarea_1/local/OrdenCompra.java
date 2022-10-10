@@ -32,7 +32,7 @@ public class OrdenCompra {
     public LocalDate getFecha(){
         return this.fecha;
     }
-    public ArrayList<DetalleOrden> getCArrito(){
+    public ArrayList<DetalleOrden> getCarrito(){
         return this.carrito;
     }
     public Cliente getCliente(){
@@ -47,10 +47,10 @@ public class OrdenCompra {
     public void setEstado(String a){
         estado = a;
     }
-    public void setFecha(){
-        fecha = LocalDate.now();
-    }
-    public void getCarrito(DetalleOrden a){
+	 public void setFecha(LocalDate fecha) {
+	     this.fecha = fecha;
+	 }
+    public void setCarrito(DetalleOrden a){
         carrito.add(a);
     }
     public void setCliente(Cliente a){
