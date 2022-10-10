@@ -15,6 +15,7 @@ public class OrdenCompra {
     private ArrayList<DetalleOrden> carrito;
     private Boleta boleta;
     private Factura factura;
+	 private ArrayList pagos;
     
     public OrdenCompra(String a, Cliente b, DetalleOrden c, Boleta d, Factura e){
         
@@ -99,4 +100,18 @@ public class OrdenCompra {
         }
         return sum;
     }
+
+	 public void pagar(int metodoDePago, float monto, int cuotas, String s1, String s2) {
+		if (metodoDePago == 1){
+			pagos.add(new Efectivo(monto,LocalDate.now(),this));
+		}else if(metodoDePago == 2){
+			pagos.add(new Transferencia(this.calPrecio(),LocalDate.now(),this,s1,s2));
+		}else if(metodoDePago == 3){
+			float cuota = this.calPrecio()/cuotas;
+			LocalDate fecha = LocalDate.now();
+			for (int i = 0;i<cuotas;i++){
+				pagos.add(new Tarjeta(cuota, fecha.plusDays(i*30), this, s1, s2));
+			}
+		}
+	 }
 }
