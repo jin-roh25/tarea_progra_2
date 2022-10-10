@@ -12,12 +12,12 @@ public class DocTributario {
     private LocalDate fecha;
     private Direccion direccion;
     
-    DocTributario(String a, String b, Direccion c){
+    DocTributario(String numero, String rut, Direccion direccion){
         
-        this.numero = a;
-        this.rut = b;
+        this.numero = numero;
+        this.rut = rut;
         this.fecha = LocalDate.now();
-        this.direccion = c;
+        this.direccion = direccion;
     }
     public String getNumero(){
         return this.numero;

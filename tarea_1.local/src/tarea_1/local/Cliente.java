@@ -10,11 +10,11 @@ public class Cliente {
   private String rut;
   private Direccion direccion;
     
-    Cliente(String a, String b, Direccion c){
+    Cliente(String nombre, String rut, Direccion direccion){
         
-        this.nombre = a;
-        this.rut = b;
-        this.direccion = c;
+        this.nombre = nombre;
+        this.rut = rut;
+        this.direccion = direccion;
     }
     public String getNombre(){
         return this.nombre;

@@ -39,7 +39,7 @@ public class Pago {
 	}
 
 	public String toString(){
-      DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		return "monto: " + this.monto + "\nfecha: " + fecha.format(formato);
 	}
 }

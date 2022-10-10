@@ -11,12 +11,12 @@ public class Articulo {
     private String descripcion;
     private float precio;
     
-    public Articulo(float a,String b,String c, float d){
+    public Articulo(float peso,String nombre,String descripcion, float precio){
         
-        this.peso = a;
-        this.nombre = b;
-        this.descripcion = c;
-        this.precio = d;
+        this.peso = peso;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
     }
     public float getPeso(){
         return this.peso;

@@ -6,30 +6,6 @@ package tarea_1.local;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-class Pago{
-    Pago(){
-        
-    }
-}
-
-class Efectivo extends Pago{
-    Efectivo(){
-        
-    }
-}
-
-class Transferencia extends Pago{
-    Transferencia(){
-        
-    }
-}
-
-class Tarjeta extends Pago{
-    Tarjeta(){
-        
-    }
-}
-
 public class Tarea_1Local {
 
     public static void main(String[] args) {
